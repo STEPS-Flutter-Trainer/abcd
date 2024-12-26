@@ -1,17 +1,21 @@
-import 'package:abcd/dragable_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'aromal/view/spalash.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DraggableContainerExample(),
+    return ScreenUtilInit(
+      designSize: Size(360, 690), // Set the design size of your app (adjust to your design)
+      builder: (context, child) => MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(),
+      ),
     );
   }
 }
+
